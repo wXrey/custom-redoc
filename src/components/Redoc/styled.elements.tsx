@@ -8,8 +8,10 @@ export const RedocWrap = styled.div`
   line-height: ${theme.typography.lineHeight};
   color: ${theme.colors.text.primary};
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   text-align: left;
+  width: 100%;
 
   -webkit-font-smoothing: ${theme.typography.smoothing};
   font-smoothing: ${theme.typography.smoothing};
@@ -25,11 +27,29 @@ export const RedocWrap = styled.div`
 `};
 `;
 
+export const CustomHeader = styled.div`
+  width: calc(100%);
+  height: 100px;
+  background: #23282b;
+  color: #fff;
+  text-align: center;
+  font-size: 3em;
+
+  & > div {
+    width: calc(100% - calc((100% - 260px) * 0.4));
+    padding: dis;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+`;
+
 export const ApiContentWrap = styled.div`
   z-index: 1;
   position: relative;
   overflow: hidden;
-  width: calc(100% - ${props => props.theme.sidebar.width});
+  width: calc(100% - ${(props) => props.theme.sidebar.width});
   ${media.lessThan('small', true)`
     width: 100%;
   `};

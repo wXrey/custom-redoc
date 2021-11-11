@@ -10,7 +10,7 @@ import { ApiLogo } from '../ApiLogo/ApiLogo';
 import { ContentItems } from '../ContentItems/ContentItems';
 import { SideMenu } from '../SideMenu/SideMenu';
 import { StickyResponsiveSidebar } from '../StickySidebar/StickyResponsiveSidebar';
-import { ApiContentWrap, BackgroundStub, RedocWrap } from './styled.elements';
+import { ApiContentWrap, BackgroundStub, RedocWrap, CustomHeader } from './styled.elements';
 
 import { SearchBox } from '../SearchBox/SearchBox';
 import { StoreProvider } from '../StoreBuilder';
@@ -42,6 +42,9 @@ export class Redoc extends React.Component<RedocProps> {
         <StoreProvider value={store}>
           <OptionsProvider value={options}>
             <RedocWrap className="redoc-wrap">
+              <CustomHeader>
+                <div>This is a custom header</div>
+              </CustomHeader>
               <StickyResponsiveSidebar menu={menu} className="menu-content">
                 <ApiLogo info={spec.info} />
                 {(!options.disableSearch && (
